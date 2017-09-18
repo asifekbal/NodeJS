@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="travel.css">
+    <script>
+        function change(obj) {
+            var selectBox = obj;
+            var selected = selectBox.options[selectBox.selectedIndex].value;
+            var textarea = document.getElementById("text_area");
+            console.log(selected);
+            /*  if(selected === '1'){
+
+                  textarea.style.display = "block";
+              }
+              else{
+                  textarea.style.display = "none";
+              }*/
+        }
+
+        function call(this) {
+            console.log("HI");
+        }
+    </script>
+    <style>
+        input[type=text],
+        select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        div {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <form action="https://bbf106cd.ngrok.io/list" method="post">
+            <label for="command">Command</label>
+            <select id="command" name="command">
+        <option value="status">Train Status</option>
+      <!--  <option value=2>PNR Enquiry</option>
+        <option value=3>Train Routes</option>
+        <option value=4>Find Trains</option>
+        <option value=5>Cancelled Trains</option>
+        <option value=6>Find Stations </option> -->
+      </select>
+            <label for="tno">Train No.</label>
+            <input type="text" id="tno" name="TrainNo" placeholder="Train number">
+            <input type="submit" value="Submit" >
+        </form>
+    </div>
+<div>
+  {{result}}
+</div>
+    <body>
+
+</html>
